@@ -23,7 +23,7 @@ def verify_password(username, password):
 	
 		
 @app.route('/')
-@auth.login_required
+#@auth.login_required
 def index():
     return "Hello, {}!".format(auth.current_user())	
 
@@ -60,14 +60,12 @@ def stream(UUID):
     return Response(eventstream(UUID), mimetype="text/event-stream")
 	
 @app.route('/vend', methods=['GET'])
-@auth.login_required
 def bulk():
     language = 'BG'
     value = {
         "language": language,
     }
     return json.dumps(value)
-
 
 
 if __name__ == "__main__":
