@@ -68,7 +68,7 @@ def bulk():
     return json.dumps(value)
 
 @app.route('/userDelete', methods=['GET'])
-def bulk():
+def user_delete():
     language = 'BG'
     value = {
         "language": language,
@@ -76,7 +76,7 @@ def bulk():
     return json.dumps(value)
 
 @app.route('/userCreateUpdate', methods=['GET'])
-def bulk():
+def user_create_update():
     language = 'BG'
     value = {
         "language": language,
