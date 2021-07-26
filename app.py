@@ -67,19 +67,23 @@ def bulk():
     }
     return json.dumps(value)
 
+
 @app.route('/userDelete', methods=['GET'])
 def user_delete():
-    language = 'BG'
+    correlationId = 'User Deleted: ASQ00*'
     value = {
-        "language": language,
+        "correlationId": correlationId,
+        "createdOn": "2021-01-31T17:33:27.902+01:00"
     }
     return json.dumps(value)
 
+
 @app.route('/userCreateUpdate', methods=['GET'])
 def user_create_update():
-    language = 'BG'
+    correlationId = 'User Created: ASQ00*'
     value = {
-        "language": language,
+        "correlationId": correlationId,
+        "createdOn": "2021-01-31T17:33:27.902+01:00"
     }
     return json.dumps(value)
 
