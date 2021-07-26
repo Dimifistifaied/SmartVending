@@ -19,9 +19,7 @@ def verify_password(username, password):
     if username in users and \
             check_password_hash(users.get(username), password):
         return username
-		
-	
-		
+
 @app.route('/')
 #@auth.login_required
 def index():
@@ -50,6 +48,7 @@ def save():
             item[1].append(request.json['text'])
     return 'OK'
 
+
 @app.route('/stream/<UUID>', methods=['GET'])
 def stream(UUID):
     def eventstream(UUID):
@@ -58,8 +57,25 @@ def stream(UUID):
                 dataJSON = json.dumps({"text": app.userDict.get(UUID).popleft()})
                 yield "event: ping\ndata:{}\n\n".format(dataJSON)
     return Response(eventstream(UUID), mimetype="text/event-stream")
-	
+
+
 @app.route('/vend', methods=['GET'])
+def bulk():
+    language = 'BG'
+    value = {
+        "language": language,
+    }
+    return json.dumps(value)
+
+@app.route('/userDelete', methods=['GET'])
+def bulk():
+    language = 'BG'
+    value = {
+        "language": language,
+    }
+    return json.dumps(value)
+
+@app.route('/userCreateUpdate', methods=['GET'])
 def bulk():
     language = 'BG'
     value = {
@@ -69,5 +85,4 @@ def bulk():
 
 
 if __name__ == "__main__":
-	app.run(host="10.228.136.41", port=5000, threaded=True, debug=True)
-    
+    app.run(host="10.228.136.41", port=5000, threaded=True, debug=True)
