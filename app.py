@@ -108,5 +108,74 @@ def cluster_delete():
     return json.dumps(value)
 
 
+@app.route('/planogram', methods=['GET'])
+def planograms():
+    correlationId = 'Planogram sent: Great!'
+    value = {
+        "correlationId": correlationId,
+        "createdOn": "2021-01-31T17:33:27.902+01:00"
+    }
+    return json.dumps(value)
+
+
+@app.route('/machineCreateUpdate', methods=['GET'])
+def machine_create_update():
+    correlationId = 'Machine created: Great!'
+    value = {
+        "correlationId": correlationId,
+        "createdOn": "2021-01-31T17:33:27.902+01:00"
+    }
+    return json.dumps(value)
+
+
+@app.route('/machineDelete', methods=['GET'])
+def machine_delete():
+    correlationId = 'Machine deleted: Great!'
+    value = {
+        "correlationId": correlationId,
+        "createdOn": "2021-01-31T17:33:27.902+01:00"
+    }
+    return json.dumps(value)
+
+
+@app.route('/componentDelete', methods=['GET'])
+def component_delete():
+    correlationId = 'Component deleted: Great!'
+    value = {
+        "correlationId": correlationId,
+        "createdOn": "2021-01-31T17:33:27.902+01:00"
+    }
+    return json.dumps(value)
+
+
+@app.route('/componentCreateUpdate', methods=['GET'])
+def component_create_update():
+    correlationId = 'Component created: Great!'
+    value = {
+        "correlationId": correlationId,
+        "createdOn": "2021-01-31T17:33:27.902+01:00"
+    }
+    return json.dumps(value)
+
+
+@app.route('/productCreateUpdate', methods=['GET'])
+def product_create_update():
+    correlationId = 'Product created: Great!'
+    value = {
+        "correlationId": correlationId,
+        "createdOn": "2021-01-31T17:33:27.902+01:00"
+    }
+    return json.dumps(value)
+
+
+@app.route('/productDelete', methods=['GET'])
+def product_deleted():
+    correlationId = 'Product deleted: Great!'
+    value = {
+        "correlationId": correlationId,
+        "createdOn": "2021-01-31T17:33:27.902+01:00"
+    }
+    return json.dumps(value)
+
 if __name__ == "__main__":
     app.run(host="10.228.136.41", port=5000, threaded=True, debug=True)
