@@ -177,5 +177,10 @@ def product_deleted():
     }
     return json.dumps(value)
 
+
+@app.route('/saveVisitPlans', methods=['POST'])
+def save_visit_plans():
+    return request.data
+
 if __name__ == "__main__":
     app.run(host="10.228.136.41", port=5000, threaded=True, debug=True)
