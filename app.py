@@ -88,5 +88,25 @@ def user_create_update():
     return json.dumps(value)
 
 
+@app.route('/clusterCreateUpdate', methods=['GET'])
+def cluster_create_update():
+    correlationId = 'Cluster Created: Great!'
+    value = {
+        "correlationId": correlationId,
+        "createdOn": "2021-01-31T17:33:27.902+01:00"
+    }
+    return json.dumps(value)
+
+
+@app.route('/clusterDelete', methods=['GET'])
+def cluster_delete():
+    correlationId = 'Cluster Deleted: Great!'
+    value = {
+        "correlationId": correlationId,
+        "createdOn": "2021-01-31T17:33:27.902+01:00"
+    }
+    return json.dumps(value)
+
+
 if __name__ == "__main__":
     app.run(host="10.228.136.41", port=5000, threaded=True, debug=True)
